@@ -1,82 +1,84 @@
-Projeto: Simulação de Malware em Ambiente Seguro
+# Projeto: Simulação de Malware em Ambiente Seguro
 
-Este repositório contém estudos e implementações realizadas como parte de um desafio educacional focado em cibersegurança defensiva. O objetivo foi compreender, na prática, o funcionamento de dois tipos comuns de malware — ransomware e keylogger — utilizando Python, sempre em ambiente seguro e controlado.
+Este repositório contém estudos e implementações realizadas como parte de um desafio educacional focado em cibersegurança defensiva. O objetivo foi compreender, na prática, o funcionamento de dois tipos comuns de malware — *ransomware* e *keylogger* — utilizando **Python**, sempre em ambiente seguro e controlado.
 
-⚠️ Aviso Importante:
-Todo o conteúdo aqui apresentado é apenas para finalidades educacionais, em ambiente isolado e sem qualquer uso malicioso.
+⚠️ **Aviso Importante:**
+Todo o conteúdo aqui apresentado é apenas para **finalidades educacionais**, em ambiente isolado e sem qualquer uso malicioso.
 
-🔒 1. Ransomware Simulado
+---
+
+## 🔒 1. Ransomware Simulado
 
 A proposta consistiu em criar um script capaz de:
 
-Gerar uma chave de criptografia (Fernet).
+* Gerar uma chave de criptografia (Fernet).
+* Criptografar arquivos de texto de teste.
+* Descriptografar usando a mesma chave.
+* Exibir uma mensagem de "resgate" simulada.
 
-Criptografar arquivos de texto de teste.
+### Tecnologias utilizadas
 
-Descriptografar usando a mesma chave.
+* `cryptography` (Fernet)
+* Python 3.12
 
-Exibir uma mensagem de "resgate" simulada.
+### Problemas enfrentados e soluções
 
-Tecnologias utilizadas
+* **Erro: `ModuleNotFoundError: No module named 'cryptography'`**
 
-cryptography (Fernet)
+  * Solução: instalar a biblioteca com `pip install cryptography` dentro do ambiente Python (`python -m pip install cryptography`).
 
-Python 3.12
+---
 
-Problemas enfrentados e soluções
+## 🎹 2. Keylogger Simulado
 
-Erro: ModuleNotFoundError: No module named 'cryptography'
-
-Solução: instalar a biblioteca com pip install cryptography dentro do ambiente Python (python -m pip install cryptography).
-
-🎹 2. Keylogger Simulado
-
-A segunda parte envolveu o desenvolvimento de um keylogger simples para registrar teclas digitadas e salvar em um arquivo .txt.
+A segunda parte envolveu o desenvolvimento de um keylogger simples para registrar teclas digitadas e salvar em um arquivo `.txt`.
 
 Funcionalidades implementadas:
 
-Captura de teclas usando pynput.
+* Captura de teclas usando `pynput`.
+* Registro contínuo em arquivo.
+* Estrutura para envio automático por e-mail.
 
-Registro contínuo em arquivo.
+### Tecnologias utilizadas
 
-Estrutura para envio automático por e-mail.
+* `pynput`
+* Python 3.12
 
-Tecnologias utilizadas
+### Problemas enfrentados e soluções
 
-pynput
+* **Erro: `pip não reconhecido`**
 
-Python 3.12
+  * Solução: utilizar `python -m pip install nome_do_pacote`.
 
-Problemas enfrentados e soluções
+* **Unhandled exception in listener callback**
 
-Erro: pip não reconhecido
+  * Solução: ajustar tratamento de teclas especiais e exceções no listener.
 
-Solução: utilizar python -m pip install nome_do_pacote.
+---
 
-Unhandled exception in listener callback
-
-Solução: ajustar tratamento de teclas especiais e exceções no listener.
-
-🛡️ 3. Medidas de Defesa e Reflexões
+## 🛡️ 3. Medidas de Defesa e Reflexões
 
 Durante o desenvolvimento, foram estudadas técnicas de proteção contra malwares reais. Entre elas:
 
-🔐 Prevenção
+### 🔐 Prevenção
 
-Uso de antivírus atualizado.
+* Uso de antivírus atualizado.
+* Firewall configurado para monitoramento ativo.
+* Prática de sandboxing para análise de arquivos suspeitos.
+* Mínimos privilégios na máquina.
+* Conscientização do usuário sobre phishing e engenharia social.
 
-Firewall configurado para monitoramento ativo.
+### 🧠 Aprendizados
 
-Prática de sandboxing para análise de arquivos suspeitos.
+* Entender o funcionamento interno de malwares ajuda a criar melhores estratégias defensivas.
+* Simulações seguras são essenciais para treinar habilidades de Blue Team.
+* Ferramentas simples em Python podem reproduzir conceitos avançados de segurança.
 
-Mínimos privilégios na máquina.
 
-Conscientização do usuário sobre phishing e engenharia social.
+## 📄 4. Conclusão
 
-🧠 Aprendizados
+Este projeto proporcionou entendimento prático sobre técnicas ofensivas, sempre com foco em **defesa cibernética**. A experiência incluiu pesquisa, solução de erros reais, implementação e documentação — habilidades fundamentais para quem busca atuar em **Blue Team**.
 
-Entender o funcionamento interno de malwares ajuda a criar melhores estratégias defensivas.
+---
 
-Simulações seguras são essenciais para treinar habilidades de Blue Team.
-
-Ferramentas simples em Python podem reproduzir conceitos avançados de segurança.
+Se quiser que eu gere os arquivos do projeto automaticamente, é só pedir!
